@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: MollenTexto;
+  src: url(mollen/Mollen\ Personal\ Use-Regular.otf);
+}
+
+@font-face {
+  font-family: MollenTitulo;
+  src: url(mollen/Mollen\ Personal\ Use-BoldCondensed.otf);
+}
+
+body{
+  align-items: center;
+  background-image: url('./MARVEL/wallpaper.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+h1{ 
+  font-size: 3.5em;
+  font-family: MollenTitulo;
+  grid-row: 3/4;
+  text-align: center;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+p{ 
+  font-size: 1.25em;
+  font-family: MollenTexto;
+  grid-row: 4/5;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.cards {
+  padding: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  margin: 10px;
+  padding: 10px;
+  width: 500px;
+  min-height: 200px;
+  display: grid;
+  grid-template-rows: 20px 50px 1fr 50px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+  background: radial-gradient(rgb(226, 12, 12), rgb(128, 4, 4));
+}
+
+.card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+.card__link,
+.card__exit,
+.card__icon {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card__link::after {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.4s;
+}
+
+.card__link:hover::after {
+  width: 100%;
+}
+
+.card__exit {
+  grid-row: 1/2;
+  justify-self: end;
+}
+
+.card__icon {
+  grid-row: 2/3;
+  font-size: 30px;
+}
+
+@media (max-width: 1600px) {
+  .cards {
+    justify-content: center;
+  }
+}
